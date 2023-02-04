@@ -14,6 +14,8 @@ class sieve:
         self.mob = [0 for _ in range(sz + 1)]
         self.prime = []
 
+        self.linear_sieve()
+
     def linear_sieve(self):
         self.phi[1] = 1
         self.mob[1] = 1
@@ -28,7 +30,6 @@ class sieve:
 
             for p in self.prime:
                 pos = i * p
-
                 if (pos > self.sz):
                     break
                 self.spf[pos] = p
