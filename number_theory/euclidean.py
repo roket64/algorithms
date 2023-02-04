@@ -1,8 +1,17 @@
+def _gcd(x: int, y: int) -> int:
+    while (y):
+        r = x % y
+        x = y
+        y = r
+
+    return x
+
+
 def gcd(x: int, y: int) -> int:
     if (x == y):
         return x
     if (x == 0):
-        return y 
+        return y
     if (y == 0):
         return x
 
