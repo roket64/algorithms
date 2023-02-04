@@ -1,9 +1,4 @@
 def linear_sieve(sz: int = 1000000) -> tuple:
-    # spf[i]: smallest prime factor for i
-    # phi[i]: euler phi function for i
-    # exp[i]: exponent of smallest prime factor for i
-    # mob[i]: mobius function for i
-    # ret: primes in given interval [2, sz]
     spf = [0 for _ in range(sz + 1)]
     phi = [0 for _ in range(sz + 1)]
     exp = [0 for _ in range(sz + 1)]
