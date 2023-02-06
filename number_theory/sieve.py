@@ -28,13 +28,20 @@ class sieve:
                 self.mob[i] = -1
                 self.prime.append(i)
 
-            for p in self.prime:
-                pos = i * p
+            for j in self.prime:
+                pos: int = i * j
                 if (pos > self.sz):
                     break
-                self.spf[pos] = p
-                self.phi[pos] = self.phi[i] * p
-                self.exp[pos] = self.exp[i] + 1
-                self.mob[pos] = 0
-                if (i % p == 0):
+
+                self.spf[pos] = j
+
+                if (i % j == 0):
+                    self.spf[pos] = j
+                    self.phi[pos] = self.phi[i] * j 
+                    self.exp[pos] = self.exp[i] + 1
+                    self.mob[pos] = 0
                     break
+                    
+                self.phi[pos] = self.phi[i] * self.phi[j]
+                self.exp[pos] = 1
+                self.mob[pos] = self.mob[i] * self.mob[j]
